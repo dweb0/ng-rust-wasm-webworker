@@ -1,3 +1,5 @@
+/// <reference path='../../types/index.d.ts' />
+
 import { expose } from 'comlink'
 import { factorial } from '../../assets/pkg/wasm_worker'
 

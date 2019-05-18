@@ -15,7 +15,7 @@ extern "C" {
 }
 
 #[wasm_bindgen]
-pub fn factorial(n: u64) -> u64 {
+pub fn factorial(n: i32) -> i32 {
     log("Calculating factorial from wasm...");
     (1..n+1).fold(1, |p, n| p*n)
 }
