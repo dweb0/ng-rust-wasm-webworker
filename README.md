@@ -1,4 +1,4 @@
-# ng-rust-wasm-webworker
+# 🏃 ng-rust-wasm-webworker
 
 Project template with the following features
 
@@ -6,9 +6,7 @@ Project template with the following features
 * rust wasm (wasm_bindgen)
 * Web workers (using comlink)
 
-Check out [this awesome guide](https://medium.com/lacolaco-blog/enjoyable-webworkers-in-angular-41cfeb0e6519) for how to use comlink with Angular. 
-
-My implementation of loading wasm_bindgen in the worker class: [wasm-worker.ts](src/app/worker/wasm-worker.ts)
+Check out [this awesome guide](https://medium.com/lacolaco-blog/enjoyable-webworkers-in-angular-41cfeb0e6519) for how to use comlink with Angular. For my implementation, see the [worker folder](src/app/worker/)
 
 ## Some notes
 
@@ -28,3 +26,4 @@ wasm-pack build --release --target no-modules
 ## Problems
 
 * Hot loading not working. Get the error "Failed to load app.component.html" after making a change.
+
