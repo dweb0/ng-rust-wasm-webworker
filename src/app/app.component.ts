@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
     }
 
     calcFactorial() {
-        this.wasmWorkerService.factorial(this.input).then(output => {
+        this.wasmWorkerService.calcFactorial(this.input).then(output => {
             this.output = output;
         })
     }

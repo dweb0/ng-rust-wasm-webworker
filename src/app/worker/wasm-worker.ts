@@ -1,7 +1,4 @@
-/// <reference path='../../types/index.d.ts' />
-
 import { expose } from 'comlink'
-import { factorial } from '../../assets/pkg/wasm_worker'
 
 export class WasmWorker {
 
@@ -22,9 +19,9 @@ export class WasmWorker {
         this.wasm_bindgen = wasm_bindgen;
     }
 
-    factorial(n: number) {
+    calcFactorial(n: number) {
         return new Promise<number>((resolve, eject) => {
-            resolve(factorial(n));
+            resolve(this.wasm_bindgen.factorial(n));
         });
     }
 
