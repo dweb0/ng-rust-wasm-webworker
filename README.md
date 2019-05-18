@@ -6,7 +6,7 @@ Project template with the following features
 * rust wasm (wasm_bindgen)
 * Web workers (using comlink)
 
-Check out [this awesome guide](https://medium.com/lacolaco-blog/enjoyable-webworkers-in-angular-41cfeb0e6519) for how to use comlink with Angular. For my implementation, see the [worker folder](src/app/worker/)
+Check out [this awesome guide](https://medium.com/lacolaco-blog/enjoyable-webworkers-in-angular-41cfeb0e6519) for how to use comlink with Angular. For my implementation, see the [worker folder](src/app/worker/).
 
 ## Some notes
 
