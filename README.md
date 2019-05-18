@@ -6,50 +6,25 @@ Project template with the following features
 * rust wasm (wasm_bindgen)
 * Web workers (using comlink)
 
-This repo is my solution to the problem after reading various guides online. If you think of a better way please let me know!
+Check out [this awesome guide](https://medium.com/lacolaco-blog/enjoyable-webworkers-in-angular-41cfeb0e6519) for how to use comlink with Angular. 
 
-# Quick start
+My implementation of loading wasm_bindgen in the worker class: [wasm-worker.ts](src/app/worker/wasm-worker.ts)
 
-1. Generate templates using angular-cli and wasm-pack-template
+## Some notes
+
+I've created a symbolic link from my angualar assets folder to the wasm pkg
 
 ```bash
-ng new project
-cargo generate --git https://github.com/rustwasm/wasm-pack-template
+cd src/assets
+ln -s ../../wasm-worker/pkg
 ```
 
-2. Build wasm with "--target no-modules" (important!)
+To build rust, I use wasm-pack with the no-modules option (important!)
 
 ```bash
 wasm-pack build --release --target no-modules
 ```
 
-3. Create symbolic link to generated pkg from angular assets folder
+## Problems
 
-```bash
-ln -s ../../wasm-worker/pkg
-```
-
-The next part of the guide is based off [link]
-
-4. Install npm packages
-
-```bash
-npm install -D worker-plugin
-ng add ngx-build-plus
-```
-
-5. Add webpack.extra.js to project root
-6. Modify angular.json to add extraWebpackConfig
-7. Install comlink
-
-```bash
-npm install --save comlink
-```
-
-
-## Acknowledgements
-
-This guide is based off 
-
-* [Enjoyable WebWorkers in Angular](https://medium.com/lacolaco-blog/enjoyable-webworkers-in-angular-41cfeb0e6519)
-
+* Hot loading not working. Get the error "Failed to load app.component.html" after making a change.
