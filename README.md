@@ -1,27 +1,55 @@
-# NgRustWasmWebworker
+# ng-rust-wasm-webworker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
+Project template with the following features
 
-## Development server
+* angular 7+
+* rust wasm (wasm_bindgen)
+* Web workers (using comlink)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This repo is my solution to the problem after reading various guides online. If you think of a better way please let me know!
 
-## Code scaffolding
+# Quick start
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Generate templates using angular-cli and wasm-pack-template
 
-## Build
+```bash
+ng new project
+cargo generate --git https://github.com/rustwasm/wasm-pack-template
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+2. Build wasm with "--target no-modules" (important!)
 
-## Running unit tests
+```bash
+wasm-pack build --release --target no-modules
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Create symbolic link to generated pkg from angular assets folder
 
-## Running end-to-end tests
+```bash
+ln -s ../../wasm-worker/pkg
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+The next part of the guide is based off [link]
 
-## Further help
+4. Install npm packages
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```bash
+npm install -D worker-plugin
+ng add ngx-build-plus
+```
+
+5. Add webpack.extra.js to project root
+6. Modify angular.json to add extraWebpackConfig
+7. Install comlink
+
+```bash
+npm install --save comlink
+```
+
+
+## Acknowledgements
+
+This guide is based off 
+
+* [Enjoyable WebWorkers in Angular](https://medium.com/lacolaco-blog/enjoyable-webworkers-in-angular-41cfeb0e6519)
+
