@@ -10,6 +10,8 @@ export class AppComponent implements OnInit {
 
     input: number = 10;
     output: number = null;
+    //loading: boolean = false;
+    outputs: number[] = [];
 
     constructor(private wasmWorkerService: WasmWorkerService) {}
 
@@ -17,9 +19,9 @@ export class AppComponent implements OnInit {
         this.wasmWorkerService.initialize();
     }
 
-    calcFactorial() {
-        this.wasmWorkerService.calcFactorial(this.input).then(output => {
-            this.output = output;
+    calculate() {
+        this.wasmWorkerService.calculate().then(output => {
+            this.outputs.push(output);
         })
     }
 }

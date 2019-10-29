@@ -19,9 +19,9 @@ export class WasmWorker {
         this.wasm_bindgen = wasm_bindgen;
     }
 
-    calcFactorial(n: number) {
+    calculate(n: number) {
         return new Promise<number>((resolve, eject) => {
-            resolve(this.wasm_bindgen.factorial(n));
+            resolve(this.wasm_bindgen.slow_calculation());
         });
     }
 

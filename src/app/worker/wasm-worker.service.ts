@@ -21,7 +21,7 @@ export class WasmWorkerService {
         console.log("Ready to work!");
     }
 
-    async calcFactorial(n: number) {
-        return this.primary_worker.calcFactorial(n);
+    async calculate() {
+        return this.primary_worker.calculate();
     }
 }
