@@ -19,7 +19,7 @@ export class WasmWorker {
         this.wasm_bindgen = wasm_bindgen;
     }
 
-    calculate(n: number) {
+    calculate() {
         return new Promise<number>((resolve, eject) => {
             resolve(this.wasm_bindgen.slow_calculation());
         });

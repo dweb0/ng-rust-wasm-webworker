@@ -1,9 +1,14 @@
-<input [(ngModel)]="input" />
+<div>
+  <button class="btn" type="button" (click)="calculateRS()">
+    Rust calculate
+  </button>
+  <button class="btn" type="button" (click)="calculateJS()">
+    JS calculate
+  </button>
 
-<button class="btn" type="button" (click)="calculate()">Test me</button>
-
-<ul>
-  <li *ngFor="let output of outputs">
-    {{ output }}
-  </li>
-</ul>
+  <ul>
+    <li *ngFor="let output of outputs">
+      {{ output }}
+    </li>
+  </ul>
+</div>

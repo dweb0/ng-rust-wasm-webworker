@@ -4,7 +4,7 @@ import { WasmWorkerService } from './worker/wasm-worker.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
 
@@ -19,7 +19,17 @@ export class AppComponent implements OnInit {
         this.wasmWorkerService.initialize();
     }
 
-    calculate() {
+    calculateJS() {
+        let score = 0;
+        for (let i = 0; i < 1_000_000_000; i++) {
+            if (i % 13 == 2) {
+                score += 1
+            }
+        }
+        this.outputs.push(score)
+    }
+
+    calculateRS() {
         this.wasmWorkerService.calculate().then(output => {
             this.outputs.push(output);
         })
