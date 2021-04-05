@@ -1,5 +1,7 @@
 # 🏃 ng-rust-wasm-webworker
 
+**Warning: This repo is no longer actively maintained. At this point, there are probably better solutions.**
+
 Project template with the following features
 
 * angular 7+
